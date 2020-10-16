@@ -44,8 +44,8 @@ export default function Weather() {
       {data ?
         <React.Fragment>
           <div className="forecast-options">
-            <Button onClick={() => setCurrent(!current)}>Current</Button>
-            <Button onClick={() => setForecast14(!forecast14)}>14 Days</Button>
+            <Button onClick={() => setCurrent(true)}>Current</Button>
+            <Button onClick={() => setForecast14(true)}>14 Days</Button>
           </div>
           {current && <Current data={data} />}
         </React.Fragment>

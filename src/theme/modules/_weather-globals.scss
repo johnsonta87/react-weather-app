@@ -13,6 +13,7 @@
   flex-direction: row;
   flex-wrap: wrap;
   width: 100%;
+  border-bottom: 1px solid $white-color;
 
   .attribute-block {
     display: flex;
@@ -73,4 +74,37 @@
   display: flex;
   justify-content: center;
   margin-bottom: 1.5rem;
+}
+
+.temptype-switcher {
+  .button {
+    padding: 8px;
+    background-color: transparent;
+    border: 1px solid $white-color;
+    width: 125px;
+    color: $white-color;
+    border-radius: 0;
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    -ms-border-radius: 0;
+    -o-border-radius: 0;
+    border-bottom: 0;
+
+    &:first-of-type {
+      border-top-left-radius: 10px;
+    }
+    &:last-of-type {
+      border-top-right-radius: 10px;
+    }
+
+    &:hover,
+    &:active,
+    &:focus {
+      background-color: #bc8f8f;
+    }
+
+    &.active {
+      background-color: #deb887;
+    }
+  }
 }

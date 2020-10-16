@@ -1,6 +1,7 @@
 .footer-app {
   text-align: center;
   color: $white-color;
+  opacity: 0.6;
   font-size: 0.8rem;
   padding: 1rem;
 
@@ -10,5 +11,6 @@
 
   a {
     color: $white-color;
+    text-decoration: underline;
   }
 }

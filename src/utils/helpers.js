@@ -1,5 +1,14 @@
-export function tempDecimal(n) {
-  const l = n / Math.pow(10, 1);
-  const degree = l.toString().slice(0, -2);
-  return degree;
+export function tempCelcius(n) {
+  const kelvin = n;
+  const celsius = kelvin - 273;
+  const celsiusTemp = Math.floor(celsius);
+  return celsiusTemp;
+}
+
+export function tempFahrenheit(n) {
+  const kelvin = n;
+  const celsius = kelvin - 273;
+  let fahrenheit = celsius * (9 / 5) + 32;
+  const fahrenheitTemp = Math.floor(fahrenheit);
+  return fahrenheitTemp;
 }
