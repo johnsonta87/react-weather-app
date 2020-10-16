@@ -1,0 +1,76 @@
+.current-weather-block {
+  text-align: center;
+  color: $white-color;
+}
+
+.weather-description {
+  font-size: 2rem;
+  text-transform: capitalize;
+}
+
+.weather-attributes {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 100%;
+
+  .attribute-block {
+    display: flex;
+    flex-direction: column;
+    flex-basis: 100%;
+    flex: 50%;
+    border-top: 1px solid $white-color;
+    padding: 1rem;
+    background-size: 30px;
+    background-repeat: no-repeat;
+    background-position: 13% center;
+    padding-left: 13%;
+    font-size: 0.9rem;
+
+    &:nth-of-type(odd) {
+      border-right: 1px solid $white-color;
+    }
+
+    &.feels-temp {
+      background-image: url("../images/icons/temp.svg");
+      background-size: auto 30px;
+      background-position: 15% center;
+    }
+
+    &.pressure {
+      background-image: url("../images/icons/pressure.svg");
+    }
+
+    &.humidity {
+      background-image: url("../images/icons/humidity.svg");
+    }
+
+    &.wind-speed {
+      background-image: url("../images/icons/wind.svg");
+    }
+
+    .attri-label {
+      text-transform: uppercase;
+      opacity: $opacity-light;
+      margin-bottom: 0.3rem;
+    }
+  }
+}
+
+.current-temp {
+  font-size: 3rem;
+  line-height: 1;
+  margin: 1rem auto;
+}
+
+.current-date {
+  display: block;
+  margin-top: 0.3rem;
+  opacity: $opacity-light;
+}
+
+.forecast-options {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+}
