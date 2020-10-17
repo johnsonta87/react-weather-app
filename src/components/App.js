@@ -70,7 +70,7 @@ export default function Weather() {
         <React.Fragment>
           <div className="forecast-options">
             <Button onClick={handleCurrent} className={current && 'active'}>Current</Button>
-            <Button onClick={handleForecast} className={forecast && 'active'}>7 Days</Button>
+            <Button onClick={handleForecast} className={forecast && 'active'}>5 Days</Button>
           </div>
           {current && <Current data={data} />}
           {forecast && <Forecast data={forecastData} />}
