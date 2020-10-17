@@ -11,3 +11,13 @@ export const fetchCurrentWeather = async (city) => {
     console.log('We have the error in services', e);
   }
 }
+
+export const fetchForecastWeather = async (city) => {
+  try {
+    const data = await API.get(`forecast?q=${city}&appid=${AppID}`);
+    return data;
+  }
+  catch (e) {
+    console.log('We have the error in services', e);
+  }
+}

@@ -1,3 +1,5 @@
+import moment from 'moment'
+
 export function tempCelcius(n) {
   const kelvin = n;
   const celsius = kelvin - 273;
@@ -11,4 +13,11 @@ export function tempFahrenheit(n) {
   let fahrenheit = celsius * (9 / 5) + 32;
   const fahrenheitTemp = Math.floor(fahrenheit);
   return fahrenheitTemp;
+}
+
+export function dateFormat(date) {
+  let now = moment(date);
+  const newDate = now.format("dddd, MMM Do");
+
+  return newDate;
 }

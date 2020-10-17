@@ -1,15 +1,17 @@
 import React, { useState } from 'react'
-import Current from './Current';
 import { Form, Input, Button } from 'semantic-ui-react'
+import { fetchCurrentWeather, fetchForecastWeather } from '../api/services'
 
-import { fetchCurrentWeather } from '../api/services'
+import Current from './Current';
+import Forecast from './Forecast'
 import Warning from './Warning';
 
 export default function Weather() {
   const [city, setCity] = useState();
   const [data, setData] = useState(null);
+  const [forecastData, setForecastData] = useState(null);
   const [current, setCurrent] = useState(true);
-  const [forecast14, setForecast14] = useState(false);
+  const [forecast, setForecast] = useState(false);
   const [warning, setWarning] = useState(false);
 
   const onChange = (event) => {
@@ -19,9 +21,9 @@ export default function Weather() {
   const onSubmit = (event) => {
     event.preventDefault();
 
+    // fetches current weather data
     if (city) {
       fetchCurrentWeather(city).then(res => {
-        console.log(res.data)
         setWarning(false);
         setData(res.data);
       }).catch(error => {
@@ -30,6 +32,29 @@ export default function Weather() {
     } else {
       setWarning(true);
     }
+
+    // fetches forecast weather data
+    if (city) {
+      fetchForecastWeather(city).then(res => {
+        setWarning(false);
+        setForecastData(res.data);
+        console.log(res.data);
+      }).catch(error => {
+        console.log(error)
+      });
+    } else {
+      setWarning(true);
+    }
+  }
+
+  const handleCurrent = () => {
+    setCurrent(true);
+    setForecast(false);
+  }
+
+  const handleForecast = () => {
+    setForecast(true);
+    setCurrent(false);
   }
 
   return (
@@ -44,10 +69,11 @@ export default function Weather() {
       {data ?
         <React.Fragment>
           <div className="forecast-options">
-            <Button onClick={() => setCurrent(true)}>Current</Button>
-            <Button onClick={() => setForecast14(true)}>14 Days</Button>
+            <Button onClick={handleCurrent} className={current && 'active'}>Current</Button>
+            <Button onClick={handleForecast} className={forecast && 'active'}>7 Days</Button>
           </div>
           {current && <Current data={data} />}
+          {forecast && <Forecast data={forecastData} />}
         </React.Fragment>
         : ''
       }

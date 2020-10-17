@@ -1,0 +1,16 @@
+.current-temp {
+  font-size: 3rem;
+  line-height: 1;
+  margin: 1rem auto;
+}
+
+.current-date {
+  display: block;
+  margin-top: 0.3rem;
+  opacity: $opacity-light;
+}
+
+.current-weather-block {
+  text-align: center;
+  color: $white-color;
+}

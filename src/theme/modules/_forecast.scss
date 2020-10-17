@@ -1,0 +1,35 @@
+.forecast-weather-block {
+  .forecast-item {
+    display: inline-flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-content: center;
+    width: 100%;
+    padding: 0.5rem 1.25rem;
+    color: $white-color;
+
+    .item-content {
+      display: flex;
+      flex-direction: column;
+      flex-basis: 20%;
+
+      &:nth-of-type(even) {
+        flex-basis: 60%;
+      }
+
+      &.text-left {
+        text-align: left;
+      }
+
+      &.text-right {
+        text-align: right;
+      }
+    }
+  }
+
+  .gatsby-image-wrapper {
+    max-width: 30px;
+    margin-right: 0;
+    margin-left: 0;
+  }
+}
