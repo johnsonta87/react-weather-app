@@ -7,7 +7,7 @@ import Attributes from './Attributes'
 
 export default function App(props) {
   const { main, weather, wind } = props.data;
-  const [tempType, setTempType] = useState(false);
+  const [tempType, setTempType] = useState(true);
 
   let now = moment();
   const currentDate = now.format("dddd, MMMM Do YYYY");
